@@ -25,18 +25,21 @@ cd ~/.openclaw/workspace/quack-dashboard
 ./start.sh
 ```
 
-This creates a tmux session named `dashboard` with the dashboard running.
+This runs the dashboard in the `main` tmux session (binh's desk screen).
 
 ### Attaching to the Dashboard
 
+The dashboard is visible on binh's desk screen (`main` tmux session). To interact with it directly:
+
 ```bash
-tmux attach -t dashboard
+tmux attach -t main
 ```
 
 ### Stopping the Dashboard
 
 ```bash
-tmux kill-session -t dashboard
+# Send Ctrl+C to stop the dashboard
+tmux send-keys -t main C-c
 ```
 
 ## Heartbeat Integration

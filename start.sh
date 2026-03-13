@@ -4,20 +4,15 @@
 set -e
 
 DASHBOARD_DIR="$HOME/.openclaw/workspace/quack-dashboard"
-TMUX_SESSION="dashboard"
+TMUX_SESSION="main"  # Dashboard runs in main session (binh's desk screen)
 
-# Check if tmux session exists
-if tmux has-session -t "$TMUX_SESSION" 2>/dev/null; then
-    echo "Dashboard session already exists. Attach with: tmux attach -t $TMUX_SESSION"
-    exit 0
-fi
+# Kill any existing animation/visualization on main session
+tmux send-keys -t main C-c
+sleep 0.5
 
-# Create new tmux session with dashboard
-tmux new-session -d -s "$TMUX_SESSION" -c "$DASHBOARD_DIR"
+# Start dashboard in main session
+tmux send-keys -t main "cd $DASHBOARD_DIR && uv run python quack_dashboard.py" Enter
 
-# Start the dashboard
-tmux send-keys -t "$TMUX_SESSION" "uv run python quack_dashboard.py" Enter
-
-echo "Dashboard started in tmux session: $TMUX_SESSION"
-echo "Attach with: tmux attach -t $TMUX_SESSION"
-echo "Kill with: tmux kill-session -t $TMUX_SESSION"
+echo "Dashboard started in tmux session: main"
+echo "It's now showing on binh's desk screen"
+echo "Stop dashboard with: tmux send-keys -t main C-c"
