@@ -1,0 +1,228 @@
+{
+  "date": "2026-03-14",
+  "count": 15,
+  "papers": [
+    {
+      "id": "2603.12263v1",
+      "title": "$\u03a8_0$: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation",
+      "summary": "We introduce $\u03a8_0$ (Psi-Zero), an open foundation model to address challenging humanoid loco-manipulation tasks. While existing approaches often attempt to address this fundamental problem by co-training on large and diverse human and humanoid data, we argue that this strategy is suboptimal due to the fundamental kinematic and motion disparities between humans and humanoid robots. Therefore, data efficiency and model performance remain unsatisfactory despite the considerable data volume. To address this challenge, \\ours\\;decouples the learning process to maximize the utility of heterogeneous data sources. Specifically, we propose a staged training paradigm with different learning objectives: First, we autoregressively pre-train a VLM backbone on large-scale egocentric human videos to acquire generalizable visual-action representations. Then, we post-train a flow-based action expert on high-quality humanoid robot data to learn precise robot joint control. Our research further identifies a critical yet often overlooked data recipe: in contrast to approaches that scale with noisy Internet clips or heterogeneous cross-embodiment robot datasets, we demonstrate that pre-training on high-quality egocentric human manipulation data followed by post-training on domain-specific real-world humanoid trajectories yields superior performance. Extensive real-world experiments demonstrate that \\ours\\ achieves the best performance using only about 800 hours of human video data and 30 hours of real-world robot data, outperforming baselines pre-trained on more than 10$\\times$ as much data by over 40\\% in overall success rate across multiple tasks. We will open-source the entire ecosystem to the community, including a data processing and training pipeline, a humanoid foundation model, and a real-time action inference engine.",
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.12263v1",
+      "authors": [
+        "Songlin Wei",
+        "Hongyi Jing",
+        "Boqian Li",
+        "Zhenyu Zhao",
+        "Jiageng Mao",
+        "Zhenhao Ni",
+        "Sicheng He",
+        "Jie Liu",
+        "Xiawei Liu",
+        "Kaidi Kang",
+        "Sheng Zang",
+        "Weiduo Yuan",
+        "Marco Pavone",
+        "Di Huang",
+        "Yue Wang"
+      ]
+    },
+    {
+      "id": "2603.12260v1",
+      "title": "HumDex:Humanoid Dexterous Manipulation Made Easy",
+      "summary": "This paper investigates humanoid whole-body dexterous manipulation, where the efficient collection of high-quality demonstration data remains a central bottleneck. Existing teleoperation systems often suffer from limited portability, occlusion, or insufficient precision, which hinders their applicability to complex whole-body tasks. To address these challenges, we introduce HumDex, a portable teleoperation system designed for humanoid whole-body dexterous manipulation. Our system leverages IMU-based motion tracking to address the portability-precision trade-off, enabling accurate full-body tracking while remaining easy to deploy. For dexterous hand control, we further introduce a learning-based retargeting method that generates smooth and natural hand motions without manual parameter tuning. Beyond teleoperation, HumDex enables efficient collection of human motion data. Building on this capability, we propose a two-stage imitation learning framework that first pre-trains on diverse human motion data to learn generalizable priors, and then fine-tunes on robot data to bridge the embodiment gap for precise execution. We demonstrate that this approach significantly improves generalization to new configurations, objects, and backgrounds with minimal data acquisition costs. The entire system is fully reproducible and open-sourced at https://github.com/physical-superintelligence-lab/HumDex.",
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.12260v1",
+      "authors": [
+        "Liang Heng",
+        "Yihe Tang",
+        "Jiajun Xu",
+        "Henghui Bao",
+        "Di Huang",
+        "Yue Wang"
+      ]
+    },
+    {
+      "id": "2603.12243v1",
+      "title": "HandelBot: Real-World Piano Playing via Fast Adaptation of Dexterous Robot Policies",
+      "summary": "Mastering dexterous manipulation with multi-fingered hands has been a grand challenge in robotics for decades. Despite its potential, the difficulty of collecting high-quality data remains a primary bottleneck for high-precision tasks. While reinforcement learning and simulation-to-real-world transfer offer a promising alternative, the transferred policies often fail for tasks demanding millimeter-scale precision, such as bimanual piano playing. In this work, we introduce HandelBot, a framework that combines a simulation policy and rapid adaptation through a two-stage pipeline. Starting from a simulation-trained policy, we first apply a structured refinement stage to correct spatial alignments by adjusting lateral finger joints based on physical rollouts. Next, we use residual reinforcement learning to autonomously learn fine-grained corrective actions. Through extensive hardware experiments across five recognized songs, we demonstrate that HandelBot can successfully perform precise bimanual piano playing. Our system outperforms direct simulation deployment by a factor of 1.8x and requires only 30 minutes of physical interaction data.",
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.12243v1",
+      "authors": [
+        "Amber Xie",
+        "Haozhi Qi",
+        "Dorsa Sadigh"
+      ]
+    },
+    {
+      "id": "2603.12193v1",
+      "title": "SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics",
+      "summary": "Active perception and manipulation are crucial for robots to interact with complex scenes. Existing methods struggle to unify semantic-driven active perception with robust, viewpoint-invariant execution. We propose SaPaVe, an end-to-end framework that jointly learns these capabilities in a data-efficient manner. Our approach decouples camera and manipulation actions rather than placing them in a shared action space, and follows a bottom-up training strategy: we first train semantic camera control on a large-scale dataset, then jointly optimize both action types using hybrid data. To support this framework, we introduce ActiveViewPose-200K, a dataset of 200k image-language-camera movement pairs for semantic camera movement learning, and a 3D geometry-aware module that improves execution robustness under dynamic viewpoints. We also present ActiveManip-Bench, the first benchmark for evaluating active manipulation beyond fixed-view settings. Extensive experiments in both simulation and real-world environments show that SaPaVe outperforms recent vision-language-action models such as GR00T N1 and \\(\u03c0_0\\), achieving up to 31.25\\% higher success rates in real-world tasks. These results show that tightly coupled perception and execution, when trained with decoupled yet coordinated strategies, enable efficient and generalizable active manipulation. Project page: https://lmzpai.github.io/SaPaVe",
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.12193v1",
+      "authors": [
+        "Mengzhen Liu",
+        "Enshen Zhou",
+        "Cheng Chi",
+        "Yi Han",
+        "Shanyu Rong",
+        "Liming Chen",
+        "Pengwei Wang",
+        "Zhongyuan Wang",
+        "Shanghang Zhang"
+      ]
+    },
+    {
+      "id": "2603.12185v1",
+      "title": "ComFree-Sim: A GPU-Parallelized Analytical Contact Physics Engine for Scalable Contact-Rich Robotics Simulation and Control",
+      "summary": "Physics simulation for contact-rich robotics is often bottlenecked by contact resolution: mainstream engines enforce non-penetration and Coulomb friction via complementarity constraints or constrained optimization, requiring per-step iterative solves whose cost grows superlinearly with contact density. We present ComFree-Sim, a GPU-parallelized analytical contact physics engine built on complementarity-free contact modeling. ComFree-Sim computes contact impulses in closed form via an impedance-style prediction--correction update in the dual cone of Coulomb friction. Contact computation decouples across contact pairs and becomes separable across cone facets, mapping naturally to GPU kernels and yielding near-linear runtime scaling with the number of contacts. We further extend the formulation to a unified 6D contact model capturing tangential, torsional, and rolling friction, and introduce a practical dual-cone impedance heuristic. ComFree-Sim is implemented in Warp and exposed through a MuJoCo-compatible interface as a drop-in backend alternative to MuJoCo Warp (MJWarp). Experiments benchmark penetration, friction behaviors, stability, and simulation runtime scaling against MJWarp, demonstrating near-linear scaling and 2--3 times higher throughput in dense contact scenes with comparable physical fidelity. We deploy ComFree-Sim in real-time MPC for in-hand dexterous manipulation on a real-world multi-fingered LEAP hand and in dynamics-aware motion retargeting, demonstrating that low-latency simulation yields higher closed-loop success rates and enables practical high-frequency control in contact-rich tasks.",
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.12185v1",
+      "authors": [
+        "Chetan Borse",
+        "Zhixian Xie",
+        "Wei-Cheng Huang",
+        "Wanxin Jin"
+      ]
+    },
+    {
+      "id": "2603.12144v1",
+      "title": "O3N: Omnidirectional Open-Vocabulary Occupancy Prediction",
+      "summary": "Understanding and reconstructing the 3D world through omnidirectional perception is an inevitable trend in the development of autonomous agents and embodied intelligence. However, existing 3D occupancy prediction methods are constrained by limited perspective inputs and predefined training distribution, making them difficult to apply to embodied agents that require comprehensive and safe perception of scenes in open world exploration. To address this, we present O3N, the first purely visual, end-to-end Omnidirectional Open-vocabulary Occupancy predictioN framework. O3N embeds omnidirectional voxels in a polar-spiral topology via the Polar-spiral Mamba (PsM) module, enabling continuous spatial representation and long-range context modeling across 360\u00b0. The Occupancy Cost Aggregation (OCA) module introduces a principled mechanism for unifying geometric and semantic supervision within the voxel space, ensuring consistency between the reconstructed geometry and the underlying semantic structure. Moreover, Natural Modality Alignment (NMA) establishes a gradient-free alignment pathway that harmonizes visual features, voxel embeddings, and text semantics, forming a consistent \"pixel-voxel-text\" representation triad. Extensive experiments on multiple models demonstrate that our method not only achieves state-of-the-art performance on QuadOcc and Human360Occ benchmarks but also exhibits remarkable cross-scene generalization and semantic scalability, paving the way toward universal 3D world modeling. The source code will be made publicly available at https://github.com/MengfeiD/O3N.",
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.12144v1",
+      "authors": [
+        "Mengfei Duan",
+        "Hao Shi",
+        "Fei Teng",
+        "Guoqiang Zhao",
+        "Yuheng Zhang",
+        "Zhiyong Li",
+        "Kailun Yang"
+      ]
+    },
+    {
+      "id": "2603.12120v1",
+      "title": "CRAFT: A Tendon-Driven Hand with Hybrid Hard-Soft Compliance",
+      "summary": "We introduce CRAFT hand, a tendon-driven anthropomorphic hand with hybrid hard-soft compliance for contact-rich manipulation. The design is based on a simple idea: contact is not uniform across the hand. Impacts concentrate at joints, while links carry most of the load. CRAFT places soft material at joints and keeps links rigid, and uses rollingcontact joint surfaces to keep flexion on repeatable motion paths. Fifteen motors mounted on the fingers drive the hand through tendons, keeping the form factor compact and the fingers light. In structural tests, CRAFT improves strength and endurance while maintaining comparable repeatability. In teleoperation, CRAFT improves handling of fragile and low-friction items, and the hand covers 33/33 grasps in the Feix taxonomy. The full design costs under $600 and will be released open-source with visionbased teleoperation and simulation integration. Project page: http://craft-hand.github.io/",
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.12120v1",
+      "authors": [
+        "Leo Lin",
+        "Shivansh Patel",
+        "Jay Moon",
+        "Svetlana Lazebnik",
+        "Unnat Jain"
+      ]
+    },
+    {
+      "id": "2603.12099v1",
+      "title": "Towards Dynamic Model Identification and Gravity Compensation for the dVRK-Si Patient Side Manipulator",
+      "summary": "The da Vinci Research Kit (dVRK) is widely used for research in robot-assisted surgery, but most modeling and control methods target the first-generation dVRK Classic. The recently introduced dVRK-Si, built from da Vinci Si hardware, features a redesigned Patient Side Manipulator (PSM) with substantially larger gravity loading, which can degrade control if unmodeled. This paper presents the first complete kinematic and dynamic modeling framework for the dVRK-Si PSM. We derive a modified DH kinematic model that captures the closed-chain parallelogram mechanism, formulate dynamics via the Euler-Lagrange method, and express inverse dynamics in a linear-in-parameters regressor form. Dynamic parameters are identified from data collected on a periodic excitation trajectory optimized for numerical conditioning and estimated by convex optimization with physical feasibility constraints. Using the identified model, we implement real-time gravity compensation and computed-torque feedforward in the dVRK control stack. Experiments on a physical dVRK-Si show that the gravity compensation reduces steady-state joint errors by 68-84% and decreases end-effector tip drift during static holds from 4.2 mm to 0.7 mm. Computed-torque feedforward further improves transient and position tracking accuracy. For sinusoidal trajectory tracking, computed-torque feedforward reduces position errors by 35% versus gravity-only feedforward and by 40% versus PID-only. The proposed pipeline supports reliable control, high-fidelity simulation, and learning-based automation on the dVRK-Si.",
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.12099v1",
+      "authors": [
+        "Haoying Zhou",
+        "Hao Yang",
+        "Brendan Burkhart",
+        "Anton Deguet",
+        "Loris Fichera",
+        "Gregory S. Fischer",
+        "Jie Ying Wu",
+        "Peter Kazanzides"
+      ]
+    },
+    {
+      "id": "2603.12083v1",
+      "title": "Towards Universal Computational Aberration Correction in Photographic Cameras: A Comprehensive Benchmark Analysis",
+      "summary": "Prevalent Computational Aberration Correction (CAC) methods are typically tailored to specific optical systems, leading to poor generalization and labor-intensive re-training for new lenses. Developing CAC paradigms capable of generalizing across diverse photographic lenses offers a promising solution to these challenges. However, efforts to achieve such cross-lens universality within consumer photography are still in their early stages due to the lack of a comprehensive benchmark that encompasses a sufficiently wide range of optical aberrations. Furthermore, it remains unclear which specific factors influence existing CAC methods and how these factors affect their performance. In this paper, we present comprehensive experiments and evaluations involving 24 image restoration and CAC algorithms, utilizing our newly proposed UniCAC, a large-scale benchmark for photographic cameras constructed via automatic optical design. The Optical Degradation Evaluator (ODE) is introduced as a novel framework to objectively assess the difficulty of CAC tasks, offering credible quantification of optical aberrations and enabling reliable evaluation. Drawing on our comparative analysis, we identify three key factors -- prior utilization, network architecture, and training strategy -- that most significantly influence CAC performance, and further investigate their respective effects. We believe that our benchmark, dataset, and observations contribute foundational insights to related areas and lay the groundwork for future investigations. Benchmarks, codes, and Zemax files will be available at https://github.com/XiaolongQian/UniCAC.",
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.12083v1",
+      "authors": [
+        "Xiaolong Qian",
+        "Qi Jiang",
+        "Yao Gao",
+        "Lei Sun",
+        "Zhonghua Yi",
+        "Kailun Yang",
+        "Luc Van Gool",
+        "Kaiwei Wang"
+      ]
+    },
+    {
+      "id": "2603.12075v1",
+      "title": "Decentralized Cooperative Localization for Multi-Robot Systems with Asynchronous Sensor Fusion",
+      "summary": "Decentralized cooperative localization (DCL) is a promising approach for nonholonomic mobile robots operating in GPS-denied environments with limited communication infrastructure. This paper presents a DCL framework in which each robot performs localization locally using an Extended Kalman Filter, while sharing measurement information during update stages only when communication links are available and companion robots are successfully detected by LiDAR. The framework preserves cross-correlation consistency among robot state estimates while handling asynchronous sensor data with heterogeneous sampling rates and accommodating accelerations during dynamic maneuvers. Unlike methods that require pre-aligned coordinate systems, the proposed approach allows robots to initialize with arbitrary reference-frame orientations and achieves automatic alignment through transformation matrices in both the prediction and update stages. To improve robustness in feature-sparse environments, we introduce a dual-landmark evaluation framework that exploits both static environmental features and mobile robots as dynamic landmarks. The proposed framework enables reliable detection and feature extraction during sharp turns, while prediction accuracy is improved through information sharing from mutual observations. Experimental results in both Gazebo simulation and real-world basement environments show that DCL outperforms centralized cooperative localization (CCL), achieving a 34% reduction in RMSE, while the dual-landmark variant yields an improvement of 56%. These results demonstrate the applicability of DCL to challenging domains such as enclosed spaces, underwater environments, and feature-sparse terrains where conventional localization methods are ineffective.",
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.12075v1",
+      "authors": [
+        "Nivand Khosravi",
+        "Niusha Khosravi",
+        "Mohammad Bozorg",
+        "Masoud S. Bahraini"
+      ]
+    },
+    {
+      "id": "2603.12059v1",
+      "title": "Flight through Narrow Gaps with Morphing-Wing Drones",
+      "summary": "The size of a narrow gap traversable by a fixed-wing drone is limited by its wingspan. Inspired by birds, here, we enable the traversal of a gap of sub-wingspan width and height using a morphing-wing drone capable of temporarily sweeping in its wings mid-flight. This maneuver poses control challenges due to sudden lift loss during gap-passage at low flight speeds and the need for precisely timed wing-sweep actuation ahead of the gap. To address these challenges, we first develop an aerodynamic model for general wing-sweep morphing drone flight including low flight speeds and post-stall angles of attack. We integrate longitudinal drone dynamics into an optimal reference trajectory generation and Nonlinear Model Predictive Control framework with runtime adaptive costs and constraints. Validated on a 130 g wing-sweep-morphing drone, our method achieves an average altitude error of 5 cm during narrow-gap passage at forward speeds between 5 and 7 m/s, whilst enforcing fully swept wings near the gap across variable threshold distances. Trajectory analysis shows that the drone can compensate for lift loss during gap-passage by accelerating and pitching upwards ahead of the gap to an extent that differs between reference trajectory optimization objectives. We show that our strategy also allows for accurate gap passage on hardware whilst maintaining a constant forward flight speed reference and near-constant altitude.",
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.12059v1",
+      "authors": [
+        "Julius Wanner",
+        "Hoang-Vu Phan",
+        "Charbel Toumieh",
+        "Dario Floreano"
+      ]
+    },
+    {
+      "id": "2603.12020v1",
+      "title": "Sim-to-reality adaptation for Deep Reinforcement Learning applied to an underwater docking application",
+      "summary": "Deep Reinforcement Learning (DRL) offers a robust alternative to traditional control methods for autonomous underwater docking, particularly in adapting to unpredictable environmental conditions. However, bridging the \"sim-to-real\" gap and managing high training latencies remain significant bottlenecks for practical deployment. This paper presents a systematic approach for autonomous docking using the Girona Autonomous Underwater Vehicle (AUV) by leveraging a high-fidelity digital twin environment. We adapted the Stonefish simulator into a multiprocessing RL framework to significantly accelerate the learning process while incorporating realistic AUV dynamics, collision models, and sensor noise. Using the Proximal Policy Optimization (PPO) algorithm, we developed a 6-DoF control policy trained in a headless environment with randomized starting positions to ensure generalized performance. Our reward structure accounts for distance, orientation, action smoothness, and adaptive collision penalties to facilitate soft docking. Experimental results demonstrate that the agent achieved a success rate of over 90% in simulation. Furthermore, successful validation in a physical test tank confirmed the efficacy of the sim-to-reality adaptation, with the DRL controller exhibiting emergent behaviors such as pitch-based braking and yaw oscillations to assist in mechanical alignment.",
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.12020v1",
+      "authors": [
+        "Alaaeddine Chaarani",
+        "Narcis Palomeras",
+        "Pere Ridao"
+      ]
+    },
+    {
+      "id": "2603.11980v1",
+      "title": "Learning Visuomotor Policy for Multi-Robot Laser Tag Game",
+      "summary": "In this paper, we study multi robot laser tag, a simplified yet practical shooting-game-style task. Classic modular approaches on these tasks face challenges such as limited observability and reliance on depth mapping and inter robot communication. To overcome these issues, we present an end-to-end visuomotor policy that maps images directly to robot actions. We train a high performing teacher policy with multi agent reinforcement learning and distill its knowledge into a vision-based student policy. Technical designs, including a permutation-invariant feature extractor and depth heatmap input, improve performance over standard architectures. Our policy outperforms classic methods by 16.7% in hitting accuracy and 6% in collision avoidance, and is successfully deployed on real robots. Code will be released publicly.",
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.11980v1",
+      "authors": [
+        "Kai Li",
+        "Shiyu Zhao"
+      ]
+    },
+    {
+      "id": "2603.11963v1",
+      "title": "Energy Prediction on Sloping Ground for Quadruped Robots",
+      "summary": "Energy management is a fundamental challenge for legged robots in outdoor environments. Endurance directly constrains mission success, while efficient resource use reduces ecological impact. This paper investigates how terrain slope and heading orientation influence the energetic cost of quadruped locomotion. We introduce a simple energy model that relies solely on standard onboard sensors, avoids specialized instrumentation, and remains applicable in previously unexplored environments. The model is identified from field runs on a commercial quadruped and expressed as a compact function of slope angle and heading. Field validation on natural terrain shows near-linear trends of force-equivalent cost with slope angle, consistently higher lateral costs, and additive behavior across trajectory segments, supporting path-level energy prediction for planning-oriented evaluation.",
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.11963v1",
+      "authors": [
+        "Mohamed Ounally",
+        "Cyrille Pierre",
+        "Johann Laconte"
+      ]
+    },
+    {
+      "id": "2603.11811v1",
+      "title": "RADAR: Closed-Loop Robotic Data Generation via Semantic Planning and Autonomous Causal Environment Reset",
+      "summary": "The acquisition of large-scale physical interaction data, a critical prerequisite for modern robot learning, is severely bottlenecked by the prohibitive cost and scalability limits of human-in-the-loop collection paradigms. To break this barrier, we introduce Robust Autonomous Data Acquisition for Robotics (RADAR), a fully autonomous, closed-loop data generation engine that completely removes human intervention from the collection cycle. RADAR elegantly divides the cognitive load into a four-module pipeline. Anchored by 2-5 3D human demonstrations as geometric priors, a Vision-Language Model first orchestrates scene-relevant task generation via precise semantic object grounding and skill retrieval. Next, a Graph Neural Network policy translates these subtasks into physical actions via in-context imitation learning. Following execution, the VLM performs automated success evaluation using a structured Visual Question Answering pipeline. Finally, to shatter the bottleneck of manual resets, a Finite State Machine orchestrates an autonomous environment reset and asymmetric data routing mechanism. Driven by simultaneous forward-reverse planning with a strict Last-In, First-Out causal sequence, the system seamlessly restores unstructured workspaces and robustly recovers from execution failures. This continuous brain-cerebellum synergy transforms data collection into a self-sustaining process. Extensive evaluations highlight RADAR's exceptional versatility. In simulation, our framework achieves up to 90% success rates on complex, long-horizon tasks, effortlessly solving challenges where traditional baselines plummet to near-zero performance. In real-world deployments, the system reliably executes diverse, contact-rich skills (e.g., deformable object manipulation) via few-shot adaptation without domain-specific fine-tuning, providing a highly scalable paradigm for robotic data acquisition.",
+      "published": "2026-03-12",
+      "url": "https://arxiv.org/abs/2603.11811v1",
+      "authors": [
+        "Yongzhong Wang",
+        "Keyu Zhu",
+        "Yong Zhong",
+        "Liqiong Wang",
+        "Jinyu Yang",
+        "Feng Zheng"
+      ]
+    }
+  ]
+}

@@ -5,6 +5,7 @@ from textual.widgets import Header, Footer, Static, TabbedContent, TabPane, Data
 from textual.containers import Container, Vertical, Horizontal
 from textual.reactive import reactive
 from textual import events
+from textual import on
 import json
 from pathlib import Path
 from datetime import datetime
@@ -17,26 +18,61 @@ class QuackDashboard(App):
 
     CSS = """
     Screen {
-        background: #0f0f0f;
+        background: #0d1117;
     }
     Header {
         background: #1a1a2e;
         text-style: bold;
+        text-color: #1ed5ff;
+        padding: 1 2;
+        border: solid #0f3460;
     }
     Footer {
         background: #1a1a2e;
+        text-color: #98c379;
+        padding: 0 2;
     }
     TabbedContent {
         background: #16213e;
+        border: solid #0f3460;
     }
     TabPane {
-        background: #0f0f0f;
+        background: #0d1117;
+        text-style: bold;
+        padding: 0 1;
+    }
+    TabPane.--tab-active {
+        background: #1ed5ff;
+        text-color: #0d1117;
     }
     DataTable {
         background: #16213e;
+        border: solid #0f3460;
+    }
+    DataTable > .datatable--header {
+        background: #0f3460;
+        text-style: bold;
+        text-color: #1ed5ff;
+    }
+    DataTable > .datatable--cursor {
+        background: #1ed5ff;
+        text-color: #0d1117;
     }
     RichLog {
         background: #1a1a2e;
+        border: solid #0f3460;
+    }
+    Static {
+        text-color: #c9d1d9;
+    }
+    Static.--title {
+        text-style: bold;
+        text-color: #1ed5ff;
+        border-bottom: solid #0f3460;
+        padding: 0 0 1 0;
+    }
+    Container {
+        padding: 1;
     }
     """
 
@@ -48,19 +84,19 @@ class QuackDashboard(App):
         with TabbedContent(id="main-tabs"):
             with TabPane("📊 Daily Research", id="research-tab"):
                 yield Container(
-                    Static("Today's Papers from arXiv Robotics", id="research-title"),
+                    Static("Today's Papers from arXiv Robotics", classes="title"),
                     DataTable(id="research-table"),
                     id="research-container"
                 )
             with TabPane("📝 Active Tasks", id="tasks-tab"):
                 yield Container(
-                    Static("Current Tasks & Projects", id="tasks-title"),
+                    Static("Current Tasks & Projects", classes="title"),
                     RichLog(id="tasks-log", auto_scroll=True),
                     id="tasks-container"
                 )
             with TabPane("🔧 System Status", id="system-tab"):
                 yield Container(
-                    Static("System Information", id="system-title"),
+                    Static("System Information", classes="title"),
                     Static("", id="system-info"),
                     id="system-container"
                 )
@@ -71,7 +107,7 @@ class QuackDashboard(App):
         self.load_research_data()
         self.load_system_info()
         self.setup_tasks_log()
-        self.set_interval(5, self.refresh_data)  # Refresh every 5 seconds
+        self.set_interval(5, self.refresh_data)
 
     def load_research_data(self) -> None:
         """Load research papers from JSON file"""
@@ -111,14 +147,14 @@ class QuackDashboard(App):
         from datetime import datetime as dt
 
         info = [
-            f"Dashboard Version: 1.0.0",
-            f"Last Updated: {dt.now().strftime('%Y-%m-%d %H:%M:%S')}",
-            f"Audio Transcription: Active (whisper-ctranslate2)",
-            f"GitHub Account: just-quack-quack",
-            f"Workspace: ~/.openclaw/workspace",
+            f"[bold cyan]Dashboard Version:[/bold cyan] 2.0.0",
+            f"[bold cyan]Last Updated:[/bold cyan] {dt.now().strftime('%Y-%m-%d %H:%M:%S')}",
+            f"[bold cyan]Audio Transcription:[/bold cyan] Active (whisper-ctranslate2)",
+            f"[bold cyan]GitHub Account:[/bold cyan] just-quack-quack",
+            f"[bold cyan]Workspace:[/bold cyan] ~/.openclaw/workspace",
             f"",
-            f"Heartbeat Check: Every 30 minutes",
-            f"Next Update: During next heartbeat",
+            f"[bold cyan]Heartbeat Check:[/bold cyan] Every 30 minutes",
+            f"[bold cyan]Next Update:[/bold cyan] During next heartbeat",
         ]
 
         info_text = "\n".join(info)
@@ -128,7 +164,7 @@ class QuackDashboard(App):
         """Set up the tasks log"""
         log = self.query_one("#tasks-log", RichLog)
         log.write("[bold cyan]🦆 Quack Dashboard Loaded[/bold cyan]")
-        log.write("[green]Ready for tasks![/green]")
+        log.write("[green]✓ Ready for tasks![/green]")
 
     def refresh_data(self) -> None:
         """Refresh data periodically"""
