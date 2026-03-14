@@ -61,6 +61,7 @@ class QuackDashboard(App):
     RichLog {
         background: #1a1a2e;
         border: solid #0f3460;
+        overflow-y: auto;  /* Enable scrolling */
     }
     Static {
         text-color: #c9d1d9;
@@ -113,10 +114,10 @@ class QuackDashboard(App):
         """Load research papers from JSON file"""
         table = self.query_one("#research-table", DataTable)
 
-        # Add columns
+        # Add columns - no width limit for scrolling
         table.add_column("Time", width=10)
         table.add_column("Paper ID", width=12)
-        table.add_column("Title", width=50)
+        table.add_column("Title", width=80)  # Increased width for longer titles
 
         # Load today's papers
         today = datetime.now().strftime('%Y-%m-%d')
@@ -129,7 +130,7 @@ class QuackDashboard(App):
             for paper in data.get('papers', []):
                 # Extract time from paper ID or use current time
                 paper_id = paper.get('id', '')
-                title = paper.get('title', 'No title')[:47] + '...' if len(paper.get('title', '')) > 50 else paper.get('title', '')
+                title = paper.get('title', 'No title')  # No truncation - let table handle it
 
                 # Format time from arXiv ID (YYMM)
                 if '.' in paper_id:
@@ -179,14 +180,14 @@ class QuackDashboard(App):
 
         table.add_column("Time", width=10)
         table.add_column("Paper ID", width=12)
-        table.add_column("Title", width=50)
+        table.add_column("Title", width=80)  # Increased width, no truncation
 
         count = papers_data.get('count', 0)
         self.query_one("#research-title", Static).update(f"Today's Papers from arXiv Robotics ({count} new)")
 
         for paper in papers_data.get('papers', []):
             paper_id = paper.get('id', '')
-            title = paper.get('title', 'No title')[:47] + '...' if len(paper.get('title', '')) > 50 else paper.get('title', '')
+            title = paper.get('title', 'No title')  # No truncation
 
             if '.' in paper_id:
                 yymm = paper_id.split('.')[0][:4]
