@@ -23,13 +23,13 @@ class QuackDashboard(App):
     Header {
         background: #1a1a2e;
         text-style: bold;
-        text-color: #1ed5ff;
+        color: #1ed5ff;
         padding: 1 2;
         border: solid #0f3460;
     }
     Footer {
         background: #1a1a2e;
-        text-color: #98c379;
+        color: #98c379;
         padding: 0 2;
     }
     TabbedContent {
@@ -43,7 +43,7 @@ class QuackDashboard(App):
     }
     TabPane.--tab-active {
         background: #1ed5ff;
-        text-color: #0d1117;
+        color: #0d1117;
     }
     DataTable {
         background: #16213e;
@@ -52,11 +52,11 @@ class QuackDashboard(App):
     DataTable > .datatable--header {
         background: #0f3460;
         text-style: bold;
-        text-color: #1ed5ff;
+        color: #1ed5ff;
     }
     DataTable > .datatable--cursor {
         background: #1ed5ff;
-        text-color: #0d1117;
+        color: #0d1117;
     }
     RichLog {
         background: #1a1a2e;
@@ -64,11 +64,11 @@ class QuackDashboard(App):
         overflow-y: auto;  /* Enable scrolling */
     }
     Static {
-        text-color: #c9d1d9;
+        color: #c9d1d9;
     }
     Static.--title {
         text-style: bold;
-        text-color: #1ed5ff;
+        color: #1ed5ff;
         border-bottom: solid #0f3460;
         padding: 0 0 1 0;
     }
