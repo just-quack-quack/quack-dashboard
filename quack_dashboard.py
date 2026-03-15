@@ -169,9 +169,8 @@ class QuackDashboard(App):
 
     def refresh_data(self) -> None:
         """Refresh data periodically"""
-        # Update system time
-        now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.query_one("#system-title", Static).update(f"System Information - Last Update: {now}")
+        # Dashboard auto-refreshes every 5 seconds
+        pass
 
     def update_research(self, papers_data: dict) -> None:
         """Update research panel with new papers"""
